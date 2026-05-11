@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Registration Form</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        background:#f2f5f9;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        padding:20px;
+    }
+
+    .container{
+        background:white;
+        width:800px;
+        padding:30px;
+        border-radius:12px;
+        box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .title{
+        text-align:center;
+        margin-bottom:25px;
+    }
+
+    .title h1{
+        color:#1e3a8a;
+        margin-bottom:5px;
+    }
+
+    .title p{
+        color:gray;
+        font-size:14px;
+    }
+
+    form{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:20px;
+    }
+
+    .full-width{
+        grid-column:1 / 3;
+    }
+
+    .input-group{
+        display:flex;
+        flex-direction:column;
+    }
+
+    label{
+        margin-bottom:6px;
+        font-weight:bold;
+        color:#333;
+    }
+
+    input,
+    select,
+    textarea{
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:15px;
+        outline:none;
+        transition:0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+        border-color:#2563eb;
+        box-shadow:0 0 5px rgba(37,99,235,0.3);
+    }
+
+    textarea{
+        resize:none;
+        height:80px;
+    }
+
+    .courses{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        margin-top:10px;
+    }
+
+    .course-item{
+        background:#f8fafc;
+        padding:10px;
+        border-radius:6px;
+    }
+
+    .buttons{
+        grid-column:1 / 3;
+        display:flex;
+        justify-content:center;
+        gap:15px;
+        margin-top:10px;
+    }
+
+    button{
+        padding:12px 25px;
+        border:none;
+        border-radius:8px;
+        font-size:16px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .submit-btn{
+        background:#2563eb;
+        color:white;
+    }
+
+    .submit-btn:hover{
+        background:#1d4ed8;
+    }
+
+    .reset-btn{
+        background:#e5e7eb;
+    }
+
+    .reset-btn:hover{
+        background:#d1d5db;
+    }
+
+    @media(max-width:768px){
+        form{
+            grid-template-columns:1fr;
+        }
+
+        .full-width,
+        .buttons{
+            grid-column:1;
+        }
+
+        .courses{
+            grid-template-columns:1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h1>Course Registration Form</h1>
+        <p>Fill in your details carefully</p>
+    </div>
+
+    <form>
+
+        <!-- Student Name -->
+        <div class="input-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Enter first name">
+        </div>
+
+        <div class="input-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Enter last name">
+        </div>
+
+        <!-- Contact -->
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email">
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number">
+        </div>
+
+        <!-- Academic -->
+        <div class="input-group">
+            <label>Student ID</label>
+            <input type="text" placeholder="Enter student ID">
+        </div>
+
+        <div class="input-group">
+            <label>Department</label>
+            <select>
+                <option>Select Department</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Business</option>
+                <option>Engineering</option>
+            </select>
+        </div>
+
+        <!-- Semester -->
+        <div class="input-group">
+            <label>Semester</label>
+            <select>
+                <option>Select Semester</option>
+                <option>Semester 1</option>
+                <option>Semester 2</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Academic Year</label>
+            <input type="text" placeholder="2025/2026">
+        </div>
+
+        <!-- Courses -->
+        <div class="input-group full-width">
+            <label>Select Courses</label>
+
+            <div class="courses">
+
+                <div class="course-item">
+                    <input type="checkbox"> Introduction to Programming
+                </div>
+
+                <div class="course-item">
+                    <input type="checkbox"> Database Systems
+                </div>
+
+                <div class="course-item">
+                    <input type="checkbox"> Web Development
+                </div>
+
+                <div class="course-item">
+                    <input type="checkbox"> Computer Networks
+                </div>
+
+                <div class="course-item">
+                    <input type="checkbox"> Mathematics
+                </div>
+
+                <div class="course-item">
+                    <input type="checkbox"> Software Engineering
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="input-group full-width">
+            <label>Address</label>
+            <textarea placeholder="Enter your address"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button type="submit" class="submit-btn">Register</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
